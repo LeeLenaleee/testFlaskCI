@@ -24,5 +24,7 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-and-test
+     docker:
+      - image: circleci/python:3.6.2-stretch-browsers
+      - run: pip install -r requirements.txt
       - run-and-pray
