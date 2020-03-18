@@ -13,10 +13,16 @@ jobs:
       - python/save-cache
       - run:
           command: pip install -r requirements.txt
-          command: ./app.py
           name: Test
+  run-and-pray:
+    executor: python/default
+    steps:
+      - run:
+          command: ./app.py
+          name: Run
 
 workflows:
   main:
     jobs:
       - build-and-test
+      - run-and-pray
