@@ -18,7 +18,7 @@ jobs:
     executor: python/default
     steps:
       - run:
-          command: ./app.py
+          command: python -m unittest  discover tests
           name: Run
 
 workflows:
